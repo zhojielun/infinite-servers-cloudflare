@@ -1,0 +1,21 @@
+name = "infinite-servers"
+main = "src/index.ts"
+compatibility_date = "2026-06-06"
+compatibility_flags = ["nodejs_compat"]
+
+# Resource bindings (D1, KV) — configured via Cloudflare Dashboard.
+# Workers Builds (GitHub integration) injects Dashboard bindings automatically.
+# For local dev, uncomment and fill in your own IDs:
+#
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "infinite-servers-db"
+# database_id = "<your-database-id>"
+#
+# [[kv_namespaces]]
+# binding = "CONFIG"
+# id = "<your-kv-namespace-id>"
+# preview_id = "<your-kv-namespace-id>"
+
+[triggers]
+crons = ["0 0 * * *"]
